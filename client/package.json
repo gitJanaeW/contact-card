@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/gitJanaeW/contact-card/issues"
   },
-  "homepage": "https://github.com/gitJanaeW/contact-card#readme"
+  "homepage": "https://github.com/gitJanaeW/contact-card#readme",
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
 }
