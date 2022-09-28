@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "heroku-prebuild": "npm install --dev",
+  "engines": {
+    "node": "17.x"
+  },
   "scripts": {
     "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
     "start": "cd server && node server.js",
