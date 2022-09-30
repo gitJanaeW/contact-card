@@ -48,3 +48,19 @@ export const postDb = async (name, email, phone, profile) => {
     console.log('🚀 - data saved to the database', result)
 
 };
+
+export const deleteDb = async (id) => {
+    console.log('DELETEing from the db', id);
+    // create a connection the the db and the version we want to use
+    const contactDb = await openDB('contact_db', 1);
+    // create a new transaction and specify where to 'store' and what 'data privileges' are needed
+    const tx = contactDb.transaction('contacts', 'readwrite');
+    // open where the object is stored
+    const store = tx.objectStore('contacts');
+    // use the .delete() method on the delete method to delete all
+    const request = store.delete(id);
+    // get confirmation of request going through
+    const result = await request;
+    console.log('result.value:', result);
+    return result?.value;
+}; 
